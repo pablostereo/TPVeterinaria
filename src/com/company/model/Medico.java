@@ -13,6 +13,8 @@ public class Medico {
         this.especializacion = especializacion;
     }
 
+
+
     public int getId() {
         return id;
     }

@@ -3,6 +3,7 @@ package com.company;
 import com.company.model.Cliente;
 import com.company.model.Perro;
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.time.LocalDate;
@@ -11,10 +12,7 @@ public class Main {
 
     public static void main(String[] args) {
 	Veterinaria vet = new Veterinaria("Tito");
-		JSONObject jc1 = new JSONObject();
-		JSONObject jc2 = new JSONObject();
-		JSONObject jc3 = new JSONObject();
-		JSONArray jsonCliArr = new JSONArray();
+	//JSONArray jsonMedArr = new JSONArray();
 
 	vet.addMedico("Perez","123","Loros");
 	vet.addMedico("Lopez","456","Ropes");
@@ -24,10 +22,11 @@ public class Main {
 	vet.agrCliente(c1);
 	vet.addCliente("Julieta","40987654","Belgrano 3214","4751654");
 	vet.addCliente("Juan","12456789","Rivadavia 4716","4456712");
+	vet.addMedico("Juarez","789","gatos");
 
 
 //	vet.mostrarClientes();
-//	vet.mostrarMedicos();
+	vet.mostrarMedicos();
 
 
     }

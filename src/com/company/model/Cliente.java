@@ -29,6 +29,7 @@ public class Cliente {
         }
     }
 
+
     public int getId() {
         return id;
     }
@@ -62,6 +63,6 @@ public class Cliente {
                 ", direccion='" + direccion + '\'' +
                 ", telefono='" + telefono + '\'' +
                 ", mascotas=" + mascotas.toString() +
-                "}";
+                "}"; //TODO muestra elemntos de animal y no de clases hijas, usar equals
     }
 }
