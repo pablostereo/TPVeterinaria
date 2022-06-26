@@ -10,19 +10,27 @@ import java.util.ArrayList;
 
 public class Veterinaria {
     private String nombre;
-    private ArrayList<Cliente> clientes;
-    private ArrayList<Medico> medicos;
-    private ArrayList<Turno> turnos;
+    private ArrayList<Cliente> clientes = new ArrayList<>();
+    private ArrayList<Medico> medicos = new ArrayList<>();
+    private ArrayList<Turno> turnos = new ArrayList<>();
 
     public Veterinaria(String nombre) {
         this.nombre = nombre;
     }
 
-    public void addCliente(Cliente cli){
+    public void addCliente(String nombre, String dni, String direccion, String telefono){
+        int aux = clientes.size()+1;
+        Cliente cli = new Cliente(aux, nombre, dni, direccion, telefono);
         clientes.add(cli);
     }
 
-    public void addMedico(Medico med){
+    public void agrCliente(Cliente cli){
+        clientes.add(cli);
+    }
+
+    public void addMedico(String nom, String mat, String esp){
+        int aux = medicos.size()+1;
+        Medico med = new Medico(aux, nom, mat, esp);
         medicos.add(med);
     }
 
@@ -34,7 +42,19 @@ public class Veterinaria {
 
     public void mostrarTurnos(){
         for (int i = 0; i<turnos.size();i++){
-            System.out.println(i);
+            System.out.println(turnos.get(i));
+        }
+    }
+
+    public void mostrarMedicos(){
+        for (int i = 0; i<medicos.size();i++){
+            System.out.println(medicos.get(i));
+        }
+    }
+
+    public void mostrarClientes(){
+        for (int i = 0; i<clientes.size();i++){
+            System.out.println(clientes.get(i));
         }
     }
 

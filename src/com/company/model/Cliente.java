@@ -9,7 +9,7 @@ public class Cliente {
     private String dni;
     private String direccion;
     private String telefono;
-    private ArrayList<Animal> mascotas;
+    private ArrayList<Animal> mascotas = new ArrayList<>();
 
     public Cliente(int id, String nombre, String dni, String direccion, String telefono) {
         this.id = id;
@@ -23,6 +23,12 @@ public class Cliente {
         mascotas.add(a);
     }
 
+    public void listaMascotas(){
+        for(int i=0; i<mascotas.size(); i++){
+            System.out.println(i);
+        }
+    }
+
     @Override
     public String toString() {
         return "Cliente{" +
@@ -31,7 +37,7 @@ public class Cliente {
                 ", dni='" + dni + '\'' +
                 ", direccion='" + direccion + '\'' +
                 ", telefono='" + telefono + '\'' +
-                ", mascotas=" + mascotas +
-                '}';
+                ", mascotas=" + mascotas.toString() +
+                "}";
     }
 }

@@ -5,12 +5,17 @@ public abstract class Animal {
     private String name;
     private int age;
     private String coment;
-    private Cliente client;
 
-    public Animal(String name, int age, String coment, Cliente client) {
+    public Animal(String name, int age, String coment) {
         this.name = name;
         this.age = age;
         this.coment = coment;
-        this.client = client;
+    }
+
+    @Override
+    public String toString() {
+        return "name='" + name + '\'' +
+                ", age=" + age +
+                ", coment='" + coment + '\'';
     }
 }

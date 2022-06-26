@@ -16,7 +16,8 @@ public class Medico {
     @Override
     public String toString() {
         return "Medico{" +
-                "nombre='" + nombre + '\'' +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
                 ", matricula='" + matricula + '\'' +
                 '}';
     }
