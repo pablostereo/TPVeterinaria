@@ -13,6 +13,22 @@ public class Medico {
         this.especializacion = especializacion;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getMatricula() {
+        return matricula;
+    }
+
+    public String getEspecializacion() {
+        return especializacion;
+    }
+
     @Override
     public String toString() {
         return "Medico{" +

@@ -19,7 +19,7 @@ public class Cliente {
         this.telefono = telefono;
     }
 
-    public void addAnimal(Animal a){ /// TODO distinguir que tipo de animal agregar
+    public void addAnimal(Animal a){
         mascotas.add(a);
     }
 
@@ -27,6 +27,30 @@ public class Cliente {
         for(int i=0; i<mascotas.size(); i++){
             System.out.println(i);
         }
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getDni() {
+        return dni;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public ArrayList<Animal> getMascotas() {
+        return mascotas;
     }
 
     @Override

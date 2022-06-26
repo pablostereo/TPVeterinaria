@@ -12,6 +12,19 @@ public abstract class Animal {
         this.coment = coment;
     }
 
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getComent() {
+        return coment;
+    }
+
     @Override
     public String toString() {
         return "name='" + name + '\'' +

@@ -18,6 +18,26 @@ public class Turno {
         this.fecha = fecha;
     }
 
+    public Animal getMascota() {
+        return mascota;
+    }
+
+    public Medico getMedico() {
+        return medico;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public String getInforme() {
+        return informe;
+    }
+
+    public LocalDate getFecha() {
+        return fecha;
+    }
+
     @Override
     public String toString() {
         return "Turno{" +

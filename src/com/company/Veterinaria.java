@@ -26,7 +26,7 @@ public class Veterinaria {
 
     public void agrCliente(Cliente cli){
         clientes.add(cli);
-    }
+    } //TODO chequear id que coincida con addCliente
 
     public void addMedico(String nom, String mat, String esp){
         int aux = medicos.size()+1;
@@ -56,6 +56,14 @@ public class Veterinaria {
         for (int i = 0; i<clientes.size();i++){
             System.out.println(clientes.get(i));
         }
+    }
+
+    public ArrayList<Cliente> getClientList(){
+        return clientes;
+    }
+
+    public ArrayList<Medico> getMedicList(){
+        return medicos;
     }
 
 
