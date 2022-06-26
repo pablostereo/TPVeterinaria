@@ -6,8 +6,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 
-import com.company.model.Cliente;
-import com.company.model.Medico;
+import com.company.model.*;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -24,6 +23,22 @@ public class JsonUtiles {
 
 		} catch (IOException e) {
 			e.printStackTrace();
+		}
+	}
+	public static void pasarCliente(JSONArray arr, Cliente cli) throws JSONException {
+		JSONObject obj = new JSONObject();
+		try {
+			obj.put("id: ", cli.getId());
+			obj.put("nombre: ", cli.getNombre());
+			obj.put("dni: ", cli.getDni());
+			obj.put("direccion: ", cli.getDireccion());
+			obj.put("telefono: ", cli.getTelefono());
+			obj.put("mascotas: ", cli.getMascotas());
+
+			arr.put(obj);
+			grabarCliente(arr);
+		} catch (JSONException ex) {
+			System.out.println(ex);
 		}
 	}
 
@@ -52,23 +67,6 @@ public class JsonUtiles {
 			System.out.println(ex);
 		}
 	}
-	public static void pasarCliente(JSONArray arr, Cliente cli) throws JSONException {
-		JSONObject obj = new JSONObject();
-		try {
-			obj.put("id: ", cli.getId());
-			obj.put("nombre: ", cli.getNombre());
-			obj.put("dni: ", cli.getDni());
-			obj.put("direccion: ", cli.getDireccion());
-			obj.put("telefono: ", cli.getTelefono());
-			obj.put("mascotas: ", cli.getMascotas());
-
-			arr.put(obj);
-			grabarCliente(arr);
-		} catch (JSONException ex) {
-			System.out.println(ex);
-		}
-	}
-
 
 	public static void grabarMascota(JSONArray array) {
 		try {
@@ -80,6 +78,10 @@ public class JsonUtiles {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+	public static void pasarMascota(JSONArray arr, Animal ani) throws JSONException {
+		JSONObject obj = new JSONObject();
+
 	}
 
 	public static void grabarTurno(JSONArray array) {
