@@ -2,69 +2,51 @@ package com.company.model;
 
 import java.util.ArrayList;
 
-public class Cliente extends Persona{
-
-    private String email;
-    private String password;
+public class Cliente extends Persona {
     private String direccion;
     private String telefono;
-    private ArrayList<Animal> mascotas = new ArrayList<>();
-
-    public Cliente(int id, String nombre, String dni,String email, String pass, String direccion, String telefono) {
-        super(id, nombre, dni);
-        this.email=email;
-        this.password=pass;
-        this.direccion = direccion;
-        this.telefono = telefono;
-    }
+    private ArrayList<Animal> mascotas = new ArrayList();
+    private int contraseña;
 
     public Cliente(int id, String nombre, String dni, String direccion, String telefono, int contraseña) {
+        super(id, nombre, dni);
+        this.direccion = direccion;
+        this.telefono = telefono;
+        this.contraseña = contraseña;
     }
 
-    public void addAnimal(Animal a){
-        mascotas.add(a);
+    public void addAnimal(Animal a) {
+        this.mascotas.add(a);
     }
 
-    public void listaMascotas(){
-        for(int i=0; i<mascotas.size(); i++){
+    public void listaMascotas() {
+        for(int i = 0; i < this.mascotas.size(); ++i) {
             System.out.println(i);
         }
+
     }
-   /* public boolean browsClient(String mail) {
-        Cliente clientBrows;
-        Archivos archivo = new Archivos();
-        List<Cliente> all = archivo.devolverClientes(mail);
-        if (all==null) {
-            return true;
-        }
-        for (Cliente client :
-                all) {
-            if (client.getEmail().equalsIgnoreCase(userName)) {
-                clientBrows = client;
-                return false;
-            }
-        }
-        return true;
-    }*/
 
     public String getDireccion() {
-        return direccion;
+        return this.direccion;
     }
 
     public String getTelefono() {
-        return telefono;
+        return this.telefono;
     }
 
     public ArrayList<Animal> getMascotas() {
-        return mascotas;
+        return this.mascotas;
     }
 
-    @Override
+    public void setContraseña(int contraseña) {
+        this.contraseña = contraseña;
+    }
+
+    public int getContraseña() {
+        return this.contraseña;
+    }
+
     public String toString() {
-        return "Cliente{" +super.toString()+
-                "direccion='" + direccion + '\'' +
-                ", telefono='" + telefono + '\'' +
-                ", mascotas=" + mascotas +
-                '}';
+        return "Cliente{" + super.toString() + "direccion='" + this.direccion + '\'' + ", telefono='" + this.telefono + '\'' + ", mascotas=" + this.mascotas + '\'' + ", contraseña=" + this.contraseña + '}';
     }
 }

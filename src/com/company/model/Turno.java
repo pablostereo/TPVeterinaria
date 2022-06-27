@@ -1,6 +1,5 @@
 package com.company.model;
 
-import java.time.LocalDate;
 import java.util.Date;
 
 public class Turno {
@@ -47,12 +46,7 @@ public class Turno {
 
     @Override
     public String toString() {
-        return "Turno{" +
-                "mascota=" + mascota +
-                ", medico=" + medico +
-                ", cliente=" + cliente +
-                ", informe='" + informe + '\'' +
-                ", fecha=" + fecha +
-                '}';
+        return "Turno{mascota=" + this.mascota + ", medico=" + this.medico + ", cliente=" + this.cliente + ", informe='" + this.informe + ", fecha=" + this.fecha + '}';
+
     }
 }

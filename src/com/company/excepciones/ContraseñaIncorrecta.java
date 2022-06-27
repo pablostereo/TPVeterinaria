@@ -7,7 +7,6 @@ public class ContraseñaIncorrecta extends Exception {
         super(miMnesaje);
     }
 
-    @Override
     public String getMessage() {
         return super.getMessage();
     }

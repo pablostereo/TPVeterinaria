@@ -10,11 +10,10 @@ public class ClienteNoEncontrado extends Exception {
     }
 
     public int getId() {
-        return id;
+        return this.id;
     }
 
-    @Override
     public String getMessage() {
-        return super.getMessage() + " El cliente con ID " + getId() + " no existe.";
+        return super.getMessage() + " El cliente con ID " + this.getId() + " no existe.";
     }
 }

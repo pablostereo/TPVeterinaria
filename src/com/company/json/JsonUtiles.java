@@ -1,45 +1,19 @@
 package com.company.json;
 
-import java.io.FileWriter;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-
-import com.company.model.*;
+import com.company.model.Medico;
+import com.company.model.Turno;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 
 public class JsonUtiles {
-
-	public static void grabarCliente(JSONArray array) {
-		try {
-			FileWriter file = new FileWriter("clientes.json");
-			file.write(array.toString());
-			file.flush();
-			file.close();
-
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-	public static void pasarCliente(JSONArray arr, Cliente cli) throws JSONException {
-		JSONObject obj = new JSONObject();
-		try {
-			obj.put("id: ", cli.getId());
-			obj.put("nombre: ", cli.getNombre());
-			obj.put("dni: ", cli.getDni());
-			obj.put("direccion: ", cli.getDireccion());
-			obj.put("telefono: ", cli.getTelefono());
-			obj.put("mascotas: ", cli.getMascotas());
-
-			arr.put(obj);
-			grabarCliente(arr);
-		} catch (JSONException ex) {
-			System.out.println(ex);
-		}
+	public JsonUtiles() {
 	}
 
 	public static void grabarMedico(JSONArray array) {
@@ -48,40 +22,25 @@ public class JsonUtiles {
 			file.write(array.toString());
 			file.flush();
 			file.close();
-
-		} catch (IOException e) {
-			e.printStackTrace();
+		} catch (IOException var2) {
+			var2.printStackTrace();
 		}
+
 	}
 
 	public static void pasarMedico(JSONArray arr, Medico med) throws JSONException {
 		JSONObject obj = new JSONObject();
+
 		try {
 			obj.put("id: ", med.getId());
 			obj.put("nombre: ", med.getNombre());
-			obj.put("dni: ", med.getDni());
 			obj.put("matricula: ", med.getMatricula());
 			obj.put("especializacion: ", med.getEspecializacion());
 			arr.put(obj);
 			grabarMedico(arr);
-		} catch (JSONException ex) {
-			System.out.println(ex);
+		} catch (JSONException var4) {
+			System.out.println(var4);
 		}
-	}
-
-	public static void grabarMascota(JSONArray array) {
-		try {
-			FileWriter file = new FileWriter("animales.json");
-			file.write(array.toString());
-			file.flush();
-			file.close();
-
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-	public static void pasarMascota(JSONArray arr, Animal ani) throws JSONException {
-		JSONObject obj = new JSONObject();
 
 	}
 
@@ -91,13 +50,27 @@ public class JsonUtiles {
 			file.write(array.toString());
 			file.flush();
 			file.close();
-
-		} catch (IOException e) {
-			e.printStackTrace();
+		} catch (IOException var2) {
+			var2.printStackTrace();
 		}
+
 	}
+
+	public static String leer(String archivo) {
+		String contenido = "";
+
+		try {
+			contenido = new String(Files.readAllBytes(Paths.get(archivo)));
+		} catch (IOException var3) {
+			var3.printStackTrace();
+		}
+
+		return contenido;
+	}
+
 	public static void pasarTurno(JSONArray arr, Turno tur) throws JSONException {
 		JSONObject obj = new JSONObject();
+
 		try {
 			obj.put("mascota: ", tur.getMascota());
 			obj.put("medico: ", tur.getMedico());
@@ -106,22 +79,9 @@ public class JsonUtiles {
 			obj.put("fecha: ", tur.getFecha());
 			arr.put(obj);
 			grabarTurno(arr);
-		} catch (JSONException ex) {
-			System.out.println(ex);
+		} catch (JSONException var4) {
+			System.out.println(var4);
 		}
-	}
 
-	public static String leer(String archivo)
-	{
-		String contenido = "";
-		try
-		{
-			contenido = new String(Files.readAllBytes(Paths.get(archivo+".json")));
-		}
-		catch (IOException e)
-		{
-			e.printStackTrace();
-		}
-		return contenido;
 	}
 }
