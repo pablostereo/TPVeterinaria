@@ -1,4 +1,4 @@
-package com.company;
+package com.company.json;
 
 import java.io.FileWriter;
 import java.io.IOException;

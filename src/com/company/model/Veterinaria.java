@@ -1,6 +1,7 @@
-package com.company;
+package com.company.model;
 
 import com.company.enums.AnimalType;
+import com.company.json.JsonUtiles;
 import com.company.model.Animal;
 import com.company.model.Cliente;
 import com.company.model.Medico;
@@ -23,10 +24,12 @@ public class Veterinaria {
         this.nombre = nombre;
     }
 
+
+
 ///////////////////Clientes//////////////////////////
-    public void addCliente(String nombre, String dni, String direccion, String telefono){
+    public void addCliente(String nombre, String dni, String email, String pass, String direccion, String telefono){
         int aux = clientes.size()+1;
-        Cliente cli = new Cliente(aux, nombre, dni, direccion, telefono);
+        Cliente cli = new Cliente(aux, nombre, dni,email, pass, direccion, telefono);
         clientes.add(cli);
         jsonCliente();
     }

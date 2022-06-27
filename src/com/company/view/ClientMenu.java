@@ -1,6 +1,6 @@
 package com.company.view;
 
-import com.company.Veterinaria;
+import com.company.model.Veterinaria;
 import com.company.enums.AnimalType;
 import com.company.model.Animal;
 import com.company.model.Cliente;
@@ -8,7 +8,6 @@ import com.company.model.Medico;
 import com.company.model.Turno;
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
