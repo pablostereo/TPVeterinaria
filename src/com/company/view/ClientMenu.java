@@ -1,15 +1,10 @@
 package com.company.view;
 
-import com.company.model.Veterinaria;
 import com.company.enums.AnimalType;
-import com.company.model.Animal;
-import com.company.model.Cliente;
-import com.company.model.Medico;
-import com.company.model.Turno;
+import com.company.model.*;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.Date;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -137,9 +132,9 @@ public class ClientMenu {
         Animal a = selecionarAnimal();
         Medico m = seleccionarMedico();
         System.out.println("Para que fecha desea el turno?");
-        String year = scanner.nextLine();//TODO no funciona fechas
-        String month = scanner.nextLine();//TODO no funciona fechas
-        String day = scanner.nextLine();//TODO no funciona fechas
+        String year = scanner.nextLine();
+        String month = scanner.nextLine();
+        String day = scanner.nextLine();
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
         Date fecha = null;
         try {

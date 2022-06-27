@@ -1,14 +1,11 @@
 package com.company;
 
-import com.company.archivo.Archivos;
-import com.company.enums.AnimalType;
-import com.company.model.Cliente;
-import com.company.model.Veterinaria;
+import com.company.view.MainMenu;
 
 public class Main {
 
     public static void main(String[] args) {
-	Veterinaria vet = new Veterinaria("Tito");
+	/*Veterinaria vet = new Veterinaria("Tito");
 	Archivos archivos = new Archivos();
 
 
@@ -24,6 +21,7 @@ public class Main {
 	//vet.mostrarClientes();
 	vet.sacarTurno();
 	vet.mostrarTurnos();
-
-    }
+*/
+        MainMenu menu = new MainMenu();
+	}
 }

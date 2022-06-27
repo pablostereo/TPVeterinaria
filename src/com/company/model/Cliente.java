@@ -1,10 +1,6 @@
 package com.company.model;
 
-import com.company.archivo.Archivos;
-
 import java.util.ArrayList;
-import java.util.List;
-import com.company.archivo.Archivos;
 
 public class Cliente extends Persona{
 
@@ -20,6 +16,9 @@ public class Cliente extends Persona{
         this.password=pass;
         this.direccion = direccion;
         this.telefono = telefono;
+    }
+
+    public Cliente(int id, String nombre, String dni, String direccion, String telefono, int contraseña) {
     }
 
     public void addAnimal(Animal a){

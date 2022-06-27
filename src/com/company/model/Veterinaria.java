@@ -2,16 +2,11 @@ package com.company.model;
 
 import com.company.enums.AnimalType;
 import com.company.json.JsonUtiles;
-import com.company.model.Animal;
-import com.company.model.Cliente;
-import com.company.model.Medico;
-import com.company.model.Turno;
 import org.json.JSONArray;
 import org.json.JSONException;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
@@ -140,7 +135,7 @@ public class Veterinaria {
         Animal a = selecionarAnimal();
         Medico m = seleccionarMedico();
         System.out.println("Para que fecha desea el turno?");
-        String f = scanner.nextLine();//TODO no funciona fechas
+        String f = scanner.nextLine();
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
         Date fecha = null;
         try {
