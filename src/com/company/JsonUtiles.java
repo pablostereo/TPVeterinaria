@@ -59,6 +59,7 @@ public class JsonUtiles {
 		try {
 			obj.put("id: ", med.getId());
 			obj.put("nombre: ", med.getNombre());
+			obj.put("dni: ", med.getDni());
 			obj.put("matricula: ", med.getMatricula());
 			obj.put("especializacion: ", med.getEspecializacion());
 			arr.put(obj);

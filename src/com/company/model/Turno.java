@@ -18,6 +18,13 @@ public class Turno {
         this.fecha = fecha;
     }
 
+    public Turno(Animal mascota, Medico medico, Cliente cliente, LocalDate fecha) {
+        this.mascota = mascota;
+        this.medico = medico;
+        this.cliente = cliente;
+        this.fecha = fecha;
+    }
+
     public Animal getMascota() {
         return mascota;
     }

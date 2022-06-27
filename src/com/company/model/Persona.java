@@ -4,11 +4,21 @@ public abstract class Persona {
     private int id;
     private String nombre;
     private String dni;
+    private String email;
+    private String password;
 
     public Persona(int id, String nombre, String dni) {
         this.id = id;
         this.nombre = nombre;
         this.dni = dni;
+    }
+
+    public Persona(int id, String nombre, String dni, String email, String password) {
+        this.id = id;
+        this.nombre = nombre;
+        this.dni = dni;
+        this.email = email;
+        this.password = password;
     }
 
     public int getId() {

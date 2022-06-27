@@ -1,15 +1,16 @@
 package com.company.view;
 
+import com.company.Veterinaria;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class MainMenu {
 
     static Scanner scanner = new Scanner(System.in);
-
+    Veterinaria vet = new Veterinaria("Petship");
 
     public void menuMain() {
-        int s;
         int opcion=-1; //Guardaremos la opcion del usuario
         System.out.println("Pet System");
         System.out.println("1. Ingresar");
@@ -33,7 +34,7 @@ public class MainMenu {
                 break;
             case 2:
                 System.out.println("Registro");
-                //regist();
+
                 menuMain();
                 break;
             case 3:
