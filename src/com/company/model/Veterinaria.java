@@ -89,7 +89,16 @@ public class Veterinaria {
             System.out.println(turnos.get(i));
         }
     }
-
+    public void jsonTurno() {
+        JSONArray jsonTurArr = new JSONArray();
+        for (int i = 0; i < turnos.size(); i++) {
+            try {
+                JsonUtiles.pasarTurno(jsonTurArr, turnos.get(i));
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+    }
     public void mostrarClientes(){
         for (int i = 0; i<clientes.size();i++){
             System.out.println(clientes.get(i));
@@ -142,6 +151,7 @@ public class Veterinaria {
         Cliente cliente = clientes.get(0);
         Turno t = new Turno(a, m, cliente, fecha);
         turnos.add(t);
+        jsonTurno();
     }
 }
 

@@ -96,6 +96,20 @@ public class JsonUtiles {
 			e.printStackTrace();
 		}
 	}
+	public static void pasarTurno(JSONArray arr, Turno tur) throws JSONException {
+		JSONObject obj = new JSONObject();
+		try {
+			obj.put("mascota: ", tur.getMascota());
+			obj.put("medico: ", tur.getMedico());
+			obj.put("cliente: ", tur.getCliente());
+			obj.put("informe: ", tur.getInforme());
+			obj.put("fecha: ", tur.getFecha());
+			arr.put(obj);
+			grabarTurno(arr);
+		} catch (JSONException ex) {
+			System.out.println(ex);
+		}
+	}
 
 	public static String leer(String archivo)
 	{
