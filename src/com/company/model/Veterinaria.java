@@ -9,8 +9,11 @@ import com.company.model.Turno;
 import org.json.JSONArray;
 import org.json.JSONException;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Scanner;
 
 public class Veterinaria {
@@ -75,11 +78,11 @@ public class Veterinaria {
     }
 //////////////////////////////////////////////////
 /////////////////////////Turnos//////////////////
-    public void generarTurno(Animal mascota, Medico medico, Cliente cliente, String informe){
+    /*public void generarTurno(Animal mascota, Medico medico, Cliente cliente, String informe){
         Turno t = new Turno(mascota,medico, cliente, informe, LocalDate.now());
         turnos.add(t);
         ////TODO guardar en json
-    }
+    }*/
 
     public void mostrarTurnos(){
         for (int i = 0; i<turnos.size();i++){
@@ -124,14 +127,20 @@ public class Veterinaria {
         m=getMedicList().get(aux);
         return m;
     }
-    public void sacarTurno(){
-        Animal a=selecionarAnimal();
-        Medico m=seleccionarMedico();
-        LocalDate date;
+    public void sacarTurno() {
+        Animal a = selecionarAnimal();
+        Medico m = seleccionarMedico();
         System.out.println("Para que fecha desea el turno?");
-        String fecha = scanner.nextLine();//TODO no funciona fechas
-        date= LocalDate.now();
-        Turno t = new Turno(a,m,clientes.get(0),date);
+        String f = scanner.nextLine();//TODO no funciona fechas
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        Date fecha = null;
+        try {
+            fecha = formato.parse("23/07/2022");
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        Cliente cliente = clientes.get(0);
+        Turno t = new Turno(a, m, cliente, fecha);
         turnos.add(t);
     }
 }

@@ -7,7 +7,10 @@ import com.company.model.Cliente;
 import com.company.model.Medico;
 import com.company.model.Turno;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -46,7 +49,7 @@ public class ClientMenu {
                 break;
             case 3:
                 System.out.println("Sacar turno");
-                sacarTurno();
+                //sacarTurno();
                 break;
             case 4:
                 System.exit(0);
@@ -130,15 +133,23 @@ public class ClientMenu {
         m=vet.getMedicList().get(aux);
         return m;
     }
-    public void sacarTurno(){
-        Animal a=selecionarAnimal();
-        Medico m=seleccionarMedico();
-        LocalDate date;
+   /* public void sacarTurno() {
+        Animal a = selecionarAnimal();
+        Medico m = seleccionarMedico();
         System.out.println("Para que fecha desea el turno?");
-        String fecha = scanner.nextLine();
-        date= LocalDate.parse(fecha);
-        Turno t = new Turno(a,m,cliente,date);
-    }
+        String year = scanner.nextLine();//TODO no funciona fechas
+        String month = scanner.nextLine();//TODO no funciona fechas
+        String day = scanner.nextLine();//TODO no funciona fechas
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        Date fecha = null;
+        try {
+            fecha = formato.parse("23/11/2015");
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        Cliente cliente = clientes.get(0);
+        Turno t = new Turno(a, m, cliente, fecha);
+    }*/
 
 }
 

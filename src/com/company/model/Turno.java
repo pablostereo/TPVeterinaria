@@ -8,9 +8,9 @@ public class Turno {
     private Medico medico;
     private Cliente cliente;
     private String informe;
-    private LocalDate fecha;
+    private Date fecha;
 
-    public Turno(Animal mascota, Medico medico, Cliente cliente, String informe, LocalDate fecha) {
+    public Turno(Animal mascota, Medico medico, Cliente cliente, String informe, Date fecha) {
         this.mascota = mascota;
         this.medico = medico;
         this.cliente = cliente;
@@ -18,7 +18,7 @@ public class Turno {
         this.fecha = fecha;
     }
 
-    public Turno(Animal mascota, Medico medico, Cliente cliente, LocalDate fecha) {
+    public Turno(Animal mascota, Medico medico, Cliente cliente, Date fecha) {
         this.mascota = mascota;
         this.medico = medico;
         this.cliente = cliente;
@@ -41,7 +41,7 @@ public class Turno {
         return informe;
     }
 
-    public LocalDate getFecha() {
+    public Date getFecha() {
         return fecha;
     }
 
