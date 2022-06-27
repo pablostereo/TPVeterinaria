@@ -133,7 +133,7 @@ public class ClientMenu {
         m=vet.getMedicList().get(aux);
         return m;
     }
-   /* public void sacarTurno() {
+    public void sacarTurno() {
         Animal a = selecionarAnimal();
         Medico m = seleccionarMedico();
         System.out.println("Para que fecha desea el turno?");
@@ -147,9 +147,8 @@ public class ClientMenu {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        Cliente cliente = clientes.get(0);
         Turno t = new Turno(a, m, cliente, fecha);
-    }*/
+    }
 
 }
 
